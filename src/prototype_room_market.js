@@ -37,6 +37,7 @@ Room.prototype.sellByOthersOrders = function(sellAmount, resource, force) {
   -order.price * sellAmount / config.market.energyCreditEquivalent;
   if (Memory.orders[ORDER_BUY][resource]) {
     const orders = _.sortBy(Memory.orders[ORDER_BUY][resource].orders, sortByEnergyCostAndPrice);
+    console.log(orders.length);
     for (const order of orders) {
       const amount = Math.min(sellAmount, order.remainingAmount);
       if (amount > 0 && (order.price >= config.market.minSellPrice || force)) {
@@ -51,7 +52,6 @@ Room.prototype.sellByOthersOrders = function(sellAmount, resource, force) {
           this.debugLog('market', `selling ${order.id} ${resource} ${this.name} ${amount} ${order.price}  ${returnCode === OK}`);
         }
         if (returnCode === OK) {
-            console.log('market.deal:', resource, returnCode);
           break;
         }
       }
