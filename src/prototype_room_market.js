@@ -37,9 +37,9 @@ Room.prototype.sellByOthersOrders = function(sellAmount, resource, force) {
   -order.price * sellAmount / config.market.energyCreditEquivalent;
   if (Memory.orders[ORDER_BUY][resource]) {
     const orders = _.sortBy(Memory.orders[ORDER_BUY][resource].orders, sortByEnergyCostAndPrice);
-    console.log(orders.length);
     for (const order of orders) {
       const amount = Math.min(sellAmount, order.remainingAmount);
+      console.log('amount', amount);
       if (amount > 0 && (order.price >= config.market.minSellPrice || force)) {
         if (Game.market.calcTransactionCost(amount, this.name, order.roomName) > this.terminal.store.energy) {
           break;
