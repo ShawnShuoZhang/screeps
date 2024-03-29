@@ -73,6 +73,7 @@ Room.prototype.sellOwnMineral = function() {
 
   if (config.market.sellByOwnOrders) {
     sellAmount = this.sellByOwnOrders(resource, sellAmount);
+    console.log('sellAmount', sellAmount);
   }
 
   if (sellAmount <= 0) {
