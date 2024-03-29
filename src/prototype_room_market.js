@@ -51,6 +51,7 @@ Room.prototype.sellByOthersOrders = function(sellAmount, resource, force) {
           this.debugLog('market', `selling ${order.id} ${resource} ${this.name} ${amount} ${order.price}  ${returnCode === OK}`);
         }
         if (returnCode === OK) {
+            console.log('market.deal:', resource, returnCode);
           break;
         }
       }
@@ -73,7 +74,6 @@ Room.prototype.sellOwnMineral = function() {
 
   if (config.market.sellByOwnOrders) {
     sellAmount = this.sellByOwnOrders(resource, sellAmount);
-    console.log('sellAmount', sellAmount);
   }
 
   if (sellAmount <= 0) {
