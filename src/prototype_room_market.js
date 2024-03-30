@@ -39,6 +39,7 @@ Room.prototype.sellByOthersOrders = function(sellAmount, resource, force) {
     const orders = _.sortBy(Memory.orders[ORDER_BUY][resource].orders, sortByEnergyCostAndPrice);
     for (const order of orders) {
       const amount = Math.min(sellAmount, order.remainingAmount);
+      console.log(amount > 0 && (order.price >= config.market.minSellPrice || force))
       if (amount > 0 && (order.price >= config.market.minSellPrice || force)) {
         if (Game.market.calcTransactionCost(amount, this.name, order.roomName) > this.terminal.store.energy) {
           break;
@@ -82,7 +83,6 @@ Room.prototype.sellOwnMineral = function() {
   if (_.sum(this.terminal.store) > this.terminal.storeCapacity * 0.9) {
     force = true;
   }
-  console.log('sellByOthersOrders', sellAmount, resource, force)
   this.sellByOthersOrders(sellAmount, resource, force);
   return true;
 };
