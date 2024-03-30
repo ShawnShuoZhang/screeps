@@ -146,13 +146,17 @@ Room.prototype.buyLowCostResources = function() {
  * sends 100 power to every room with a terminal
  */
 Room.prototype.sendPowerOwnRooms = function() {
+    console.log('sendPowerOwnRooms1');
   if (this.terminal && this.terminal.cooldown === 0 && this.terminal.store[RESOURCE_POWER] > 100) {
+      console.log('sendPowerOwnRooms2', this.name);
     let sendOnce = false;
     const powerTransfer = _.map(_.shuffle(Memory.myRooms), (myRoom) => {
       if (!Game.rooms[myRoom]) {
+          console.log('no room', myRoom);
         return false;
       }
       if (Game.rooms[myRoom].terminal && !sendOnce) {
+          console.log('sendPowerOwnRooms3', myRoom);
         if (!Game.rooms[myRoom].terminal.store[RESOURCE_POWER] ||
           (Game.rooms[myRoom].terminal.store[RESOURCE_POWER] < 100)) {
           console.log('send power', myRoom);
@@ -166,6 +170,7 @@ Room.prototype.sendPowerOwnRooms = function() {
             to: myRoom,
           };
         }
+        console.log('sendPowerOwnRooms4', myRoom);
         return {
           amount: Game.rooms[myRoom].terminal.store[RESOURCE_POWER],
           room: myRoom,
