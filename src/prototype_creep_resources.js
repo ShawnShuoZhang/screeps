@@ -261,6 +261,7 @@ const filterTransferable = function(creep, object) {
     return false;
   }
 
+  console.log(terminalAvailable(object))
   if (!terminalAvailable(object)) {
     return false;
   }

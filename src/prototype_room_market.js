@@ -41,7 +41,6 @@ Room.prototype.sellByOthersOrders = function(sellAmount, resource, force) {
       const amount = Math.min(sellAmount, order.remainingAmount);
       if (amount > 0 && (order.price >= config.market.minSellPrice || force)) {
         if (Game.market.calcTransactionCost(amount, this.name, order.roomName) > this.terminal.store.energy) {
-            console.log('energy',Game.market.calcTransactionCost(amount, this.name, order.roomName));
           break;
         }
         if (force && amount < 1000) {
