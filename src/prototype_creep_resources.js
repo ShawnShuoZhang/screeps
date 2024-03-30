@@ -271,10 +271,9 @@ const filterTransferable = function(creep, object) {
 
   if (object.structureType === STRUCTURE_STORAGE ?
     _.sum(object.store) + _.sum(creep.store) > object.storeCapacity :
-    object.energy === object.energyCapacity) {
+    object.energy >= object.energyCapacity) {
     return false;
   }
-  console.log('7896')
   return true;
 };
 
