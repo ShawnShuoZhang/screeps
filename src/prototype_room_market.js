@@ -41,7 +41,6 @@ Room.prototype.sellByOthersOrders = function(sellAmount, resource, force) {
       const amount = Math.min(sellAmount, order.remainingAmount);
       if (amount > 0 && (order.price >= config.market.minSellPrice || force)) {
         if (Game.market.calcTransactionCost(amount, this.name, order.roomName) > this.terminal.store.energy) {
-          console.log(Game.market.calcTransactionCost(amount, this.name, order.roomName), this.terminal.store.energy);
           break;
         }
         if (force && amount < 1000) {
@@ -156,6 +155,7 @@ Room.prototype.sendPowerOwnRooms = function() {
       if (Game.rooms[myRoom].terminal && !sendOnce) {
         if (!Game.rooms[myRoom].terminal.store[RESOURCE_POWER] ||
           (Game.rooms[myRoom].terminal.store[RESOURCE_POWER] < 100)) {
+          console.log('send power', myRoom);
           sendOnce = true;
           return {
             success: this.terminal.send(RESOURCE_POWER,
