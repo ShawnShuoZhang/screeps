@@ -274,7 +274,7 @@ const filterTransferable = function(creep, object) {
     object.energy === object.energyCapacity) {
     return false;
   }
-
+  console.log('7896')
   return true;
 };
 
@@ -312,7 +312,6 @@ Creep.prototype.transferToStructures = function() {
   for (const item of look) {
     if (filterTransferable(this, item.structure)) {
       if (transferred) {
-        console.log('456')
         return {
           moreStructures: true,
           // TODO handle different type of resources on the structure side
