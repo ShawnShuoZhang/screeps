@@ -274,6 +274,7 @@ const filterTransferable = function(creep, object) {
     object.energy >= object.energyCapacity) {
     return false;
   }
+  console.log('1234')
   return true;
 };
 
