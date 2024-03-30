@@ -253,12 +253,6 @@ const universalTarget = function(creep, object) {
 };
 
 const filterTransferable = function(creep, object) {
-  if(object.structureType===STRUCTURE_TERMINAL){
-    console.log(!canStoreEnergy(object))
-    console.log(!energyAcceptingLink(object, creep.room))
-    console.log(!terminalAvailable(object))
-    console.log(!universalTarget(creep, object))
-  }
   if (!canStoreEnergy(object)) {
     return false;
   }
@@ -277,7 +271,7 @@ const filterTransferable = function(creep, object) {
 
   if (object.structureType === STRUCTURE_STORAGE ?
     _.sum(object.store) + _.sum(creep.store) > object.storeCapacity :
-    object.energy >= object.energyCapacity) {
+    object.energy === object.energyCapacity) {
     return false;
   }
   return true;
