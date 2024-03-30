@@ -272,7 +272,6 @@ const filterTransferable = function(creep, object) {
   if (object.structureType === STRUCTURE_STORAGE ?
     _.sum(object.store) + _.sum(creep.store) > object.storeCapacity :
     object.energy === object.energyCapacity) {
-    console.log('1234')
     return false;
   }
 
@@ -313,6 +312,7 @@ Creep.prototype.transferToStructures = function() {
   for (const item of look) {
     if (filterTransferable(this, item.structure)) {
       if (transferred) {
+        console.log('456')
         return {
           moreStructures: true,
           // TODO handle different type of resources on the structure side
