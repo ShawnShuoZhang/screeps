@@ -452,6 +452,7 @@ function setState(creep) {
  * @return {bool}
  */
 function handleState(creep) {
+  console.log(!creep.data.state)
   if (!creep.data.state) {
     if (!setState(creep)) {
       return false;
