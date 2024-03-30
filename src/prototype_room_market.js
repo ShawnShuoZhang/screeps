@@ -82,6 +82,7 @@ Room.prototype.sellOwnMineral = function() {
   if (_.sum(this.terminal.store) > this.terminal.storeCapacity * 0.9) {
     force = true;
   }
+  console.log('sellByOthersOrders', sellAmount, resource, force)
   this.sellByOthersOrders(sellAmount, resource, force);
   return true;
 };
