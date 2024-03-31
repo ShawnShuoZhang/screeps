@@ -228,7 +228,7 @@ global.config = {
     spawnIdle: 0.1,
     nextroomerSpawnIdleThreshold: 0.05,
     spawnIdleFactor: 0.001,
-    isHealthyStorageThreshold: 40000,
+    isHealthyStorageThreshold: 100000,
     handleNukeAttackInterval: 132,
     reviveEnergyCapacity: 1000,
     reviveEnergyAvailable: 1000,
