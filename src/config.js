@@ -154,7 +154,7 @@ global.config = {
   },
 
   pixel: {
-    enabled: true,
+    enabled: false,
     minBucketAfter: 2500,
   },
 
@@ -337,7 +337,7 @@ global.config = {
   },
 
   cpuStats: {
-    enabled: true,
+    enabled: false,
   },
 
   useConstructingSpawnEmergencyOperations: {
