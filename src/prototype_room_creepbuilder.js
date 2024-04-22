@@ -337,7 +337,6 @@ function isSettingAnObject(setting) {
   return true;
 }
 
-
 /**
  * Room.prototype.getSettings use for return creep spawn settings
  * adapted to room configuration
