@@ -46,7 +46,7 @@ global.config = {
 
   info: {
     signController: true,
-    signText: 'Fully automated',
+    signText: 'Fully automated open source NPC',
     resignInterval: 500,
   },
 
