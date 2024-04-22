@@ -46,7 +46,7 @@ global.config = {
 
   info: {
     signController: true,
-    signText: 'Fully automated open source NPC: http://tooangel.github.io/screeps/',
+    signText: 'Fully automated',
     resignInterval: 500,
   },
 
@@ -292,7 +292,7 @@ global.config = {
     buyOrderPriceMultiplicand: 0.5,
 
     // buy power if we have more credits than config.market.minCredits
-    buyPower: false,
+    buyPower: true,
     // 300M credits
     minCredits: 300000000,
     // disable to use power only in gathered room
