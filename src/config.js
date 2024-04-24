@@ -119,7 +119,7 @@ global.config = {
     // creep max run distance for next room
     // if terminal should send energy rooms should be close
     maxDistance: 100,
-    minNewRoomDistance: 1,
+    minNewRoomDistance: 2,
     minEnergyForActive: 1000,
     notify: false,
     mineralValues: {
