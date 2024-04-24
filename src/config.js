@@ -118,8 +118,8 @@ global.config = {
     cpuPerRoom: 13, // Necessary CPU per room, prevent claiming new rooms
     // creep max run distance for next room
     // if terminal should send energy rooms should be close
-    maxDistance: 10,
-    minNewRoomDistance: 2,
+    maxDistance: 100,
+    minNewRoomDistance: 1,
     minEnergyForActive: 1000,
     notify: false,
     mineralValues: {
